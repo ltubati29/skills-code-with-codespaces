@@ -1,0 +1,93 @@
+:root {
+  --bg1: #ff5f6d;
+  --bg2: #ffc371;
+  --bg3: #ffe66d;
+  --bg4: #6ee7b7;
+  --bg5: #60a5fa;
+  --bg6: #c084fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--bg1),
+    var(--bg2),
+    var(--bg3),
+    var(--bg4),
+    var(--bg5),
+    var(--bg6)
+  );
+  color: #111827;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  width: min(92vw, 800px);
+  padding: 3rem;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.rainbow-ring {
+  position: absolute;
+  inset: 1rem;
+  border-radius: 24px;
+  border: 8px solid transparent;
+  background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6ee7b7, #60a5fa, #c084fc) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.message {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.sparkles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.8rem;
+  font-size: 1.8rem;
+  animation: bounce 2.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
